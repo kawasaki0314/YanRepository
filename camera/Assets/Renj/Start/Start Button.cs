@@ -20,6 +20,8 @@ public class StartButton : MonoBehaviour
         if (movieObject != null)
         {
             movieObject.SetActive(true);
+            videoPlayer.loopPointReached += OnVideoFinished;
+
         }
 
         if (videoPlayer != null)
@@ -36,8 +38,11 @@ public class StartButton : MonoBehaviour
         {
 
         }
+        void OnVideoFinished(VideoPlayer vp)
+        {
+            SceneManager.LoadScene("HiraScene");
 
-        SceneManager.LoadScene("HiraScene");
+        }
 
     }
 
