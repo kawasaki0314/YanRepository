@@ -51,6 +51,8 @@ public class PlayerShoot : MonoBehaviour
         //カメラが向いている方向に球を飛ばす
         // rb.linearVelocity = player_Camera.transform.forward * bulletSpeed;
     }
+
+
 }
 
 
