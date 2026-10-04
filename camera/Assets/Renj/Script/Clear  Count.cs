@@ -1,21 +1,22 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class crearbutton : MonoBehaviour
+public class ClearCount : MonoBehaviour
 {
+    int frameCount = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
-    public void OnClick()
+    private void Update()
     {
-        SceneManager.LoadScene("Title Scene");
+        frameCount++;
+        if (frameCount >=1200 )
+        {
+            SceneManager.LoadScene("End Scene");
+        }
     }
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }

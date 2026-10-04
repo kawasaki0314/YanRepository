@@ -6,6 +6,7 @@ public class PlayerHP : MonoBehaviour
     public int _hp = 3;
     public int _damage = 1;
 
+    public static bool isDead = false; 
     void Start()
     {
         Debug.Log("うおおおおおおおおおおおおお");
@@ -24,12 +25,19 @@ public class PlayerHP : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         Debug.Log("死市氏市市");
         gameObject.SetActive(false);
+        PlayerPOV playerPOV = GetComponent<PlayerPOV>();
+        if (playerPOV != null)
+        {
+            playerPOV.enabled = false; // PlayerPOVスクリプトを無効化
+        }
+        isDead = true; // プレイヤーが死亡したことを示すフラグを立てる
         SceneManager.LoadScene("Deth Scene");
     }
+    
 
     //Collision型はぶつかった相手の情報を格納するための型であり中にはgameobject
     //やtransformなどの情報が格納されており、.（ドット）でつなぐことでアクセスできる

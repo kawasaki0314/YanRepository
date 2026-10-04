@@ -13,7 +13,12 @@ public class StartButton : MonoBehaviour
     public VideoPlayer videoPlayer;
     bool isfvid;
 
-   private bool isPush = false;
+    bool isPush = false;
+
+    bool isVideoPlaying = false;
+
+    bool isSkipPush = false;
+    int holdTime = 0;
     public void OnClicked()
     {
 
@@ -27,12 +32,14 @@ public class StartButton : MonoBehaviour
         if (videoPlayer != null)
         {
             videoPlayer.Play();
+            isVideoPlaying = true;
 
         }
         isPush = !isPush;
 
         FirstCamera.SetActive(isPush);
         SecondCamera.SetActive(!isPush);
+
 
         if (isfvid)
         {
@@ -44,6 +51,18 @@ public class StartButton : MonoBehaviour
 
         }
 
+    }
+    void Update()
+    {
+        if (isVideoPlaying && Input.GetKey(KeyCode.Space))
+        {
+            holdTime++;
+            if (holdTime >= 60) // Adjust the hold time as needed
+            {
+                videoPlayer.Stop();
+                SceneManager.LoadScene("HiraScene");
+            }
+        }
     }
 
     public void PlayVideo()
