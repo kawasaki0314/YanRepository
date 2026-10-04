@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class PlayerHP : MonoBehaviour
     {
         Debug.Log("死市氏市市");
         gameObject.SetActive(false);
+        SceneManager.LoadScene("Deth Scene");
     }
 
     //Collision型はぶつかった相手の情報を格納するための型であり中にはgameobject
