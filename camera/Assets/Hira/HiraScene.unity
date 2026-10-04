@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -205,13 +206,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5131239, y: -0.2934875, z: 0.19224977, w: 0.78333205}
-  m_LocalPosition: {x: 1.48, y: 9.91, z: -3.57}
+  m_LocalRotation: {x: -0.005887701, y: -0.70678365, z: 0.050460678, w: 0.70560324}
+  m_LocalPosition: {x: -0.65, y: 0.44, z: 0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 66.454, y: -41.079, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.613, y: -89.952, z: 4.571}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +257,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3945b79460b43e745a72d66bea505eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPOV
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +295,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
@@ -334,7 +347,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -447,6 +460,7 @@ GameObject:
   - component: {fileID: 1285805031}
   - component: {fileID: 1285805036}
   - component: {fileID: 1285805037}
+  - component: {fileID: 1285805038}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -604,6 +618,18 @@ MonoBehaviour:
   bullet_Prefab: {fileID: 6012875102716479312, guid: 8f61ccd9282c6ff41816bd26562b0ef1, type: 3}
   shot_Point: {fileID: 1631758659}
   bullet_Speed: 20
+--- !u!114 &1285805038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285805030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3945b79460b43e745a72d66bea505eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPOV
 --- !u!1 &1631758658
 GameObject:
   m_ObjectHideFlags: 0
