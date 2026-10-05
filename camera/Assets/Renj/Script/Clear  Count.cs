@@ -12,7 +12,7 @@ public class ClearCount : MonoBehaviour
     private void Update()
     {
         frameCount++;
-        if (frameCount >=1200 )
+        if (frameCount >=2200 )
         {
             SceneManager.LoadScene("End Scene");
         }
