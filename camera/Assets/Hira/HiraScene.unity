@@ -188,6 +188,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1d93e2b3530a5428002265ebc27878, type: 3}
+--- !u!82 &252853511 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6294076720201145961, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+  m_PrefabInstance: {fileID: 8730872256557672552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &267682669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4370,6 +4375,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7766934318572004005, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+      propertyPath: shot_SE
+      value: 
+      objectReference: {fileID: 8300000, guid: b28be8864c6cd07458465502dc6fefa1, type: 3}
+    - target: {fileID: 7766934318572004005, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+      propertyPath: audio_Source
+      value: 
+      objectReference: {fileID: 252853511}
     - target: {fileID: 7766934318572004005, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: bullet_Speed
       value: 150
