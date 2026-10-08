@@ -2,54 +2,41 @@
 
 public class Enemy_1_Collider : MonoBehaviour
 {
-    // 爆発エフェクトのPrefab
+    // 爆発エフェクトのPrefab(InspectorでFX_Fire系のPrefabを設定する)
     [SerializeField] private GameObject _explosionEffectPrefab;
-    // エフェクトを自動削除するまでの時間(秒)
+    // エフェクトを自動削除するまでの時間(秒)。炎はループするので必ず消す
     [SerializeField] private float _effectLifetime = 2.0f;
-
-    // 弾が当たったときに鳴らすSE(AudioClip)
-    [SerializeField] private AudioClip _hitSE;
+    // 追加: 弾に当たったときに鳴らすSE(InspectorでAudioClipを設定する)
+    [SerializeField] private AudioClip _hitSeClip;
+    // 追加: SEの音量(0〜1)
+    [SerializeField, Range(0f, 1f)] private float _hitSeVolume = 1.0f;
 
     private void OnCollisionEnter(Collision collision)
     {
-        // デバッグ表示: 何が当たったかを通知
-        Debug.Log($"[Enemy_1_Collider] 接触しました: {collision.gameObject.name} (Tag: {collision.gameObject.tag})", gameObject);
+        // CompareTagは文字列比較より安全で、タグの打ち間違いも警告してくれる
+        bool isBullet = collision.gameObject.CompareTag("Bullet");
+        bool isPlayer = collision.gameObject.CompareTag("Player");
 
-        // Bulletに当たったときの処理
-        if (collision.gameObject.CompareTag("Bullet"))
+        // Bulletに当たったときだけ、エフェクトとSEを出す
+        if (isBullet)
         {
-            Debug.Log("[Enemy_1_Collider] 弾(Bullet)との接触を検知しました！", gameObject);
-
-            // 1. 爆発エフェクトの生成
+            // 爆発エフェクトを敵の位置に生成し、一定時間後に削除する
             if (_explosionEffectPrefab != null)
             {
                 GameObject effect = Instantiate(_explosionEffectPrefab, transform.position, Quaternion.identity);
                 Destroy(effect, _effectLifetime);
-                Debug.Log("[Enemy_1_Collider] 爆発エフェクトを生成しました。");
-            }
-            else
-            {
-                Debug.LogWarning("[Enemy_1_Collider] _explosionEffectPrefab が設定されていません！", gameObject);
             }
 
-            // 2. SE（効果音）の再生
-            if (_hitSE != null)
+            // 追加: 敵が破壊されても音が途切れないよう、その場に一時的な音源を作って再生する
+            if (_hitSeClip != null)
             {
-                AudioSource.PlayClipAtPoint(_hitSE, transform.position);
-                Debug.Log($"[Enemy_1_Collider] SE再生: {_hitSE.name}");
+                AudioSource.PlayClipAtPoint(_hitSeClip, transform.position, _hitSeVolume);
             }
-            else
-            {
-                Debug.LogWarning("[Enemy_1_Collider] _hitSE が設定されていません！", gameObject);
-            }
-
-            // 3. 敵の削除
-            Debug.Log("[Enemy_1_Collider] 敵オブジェクトを削除します。");
-            Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Player"))
+
+        // PlayerまたはBulletに当たったら敵を破壊する
+        if (isPlayer || isBullet)
         {
-            Debug.Log("[Enemy_1_Collider] プレイヤー(Player)と接触したため、敵オブジェクトを削除します。");
             Destroy(gameObject);
         }
     }
