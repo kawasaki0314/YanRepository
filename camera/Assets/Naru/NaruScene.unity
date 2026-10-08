@@ -343,6 +343,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: eff116d2adfa3db4da4dec7a54d0418c, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: eff116d2adfa3db4da4dec7a54d0418c, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: eff116d2adfa3db4da4dec7a54d0418c, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: eff116d2adfa3db4da4dec7a54d0418c, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1013,11 +1029,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfafe1ce6d92006499f1c31d2c31d7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_PlayerShoot
-  bullet_Prefab: {fileID: 6012875102716479312, guid: d2135b35b961b6245b275252079e7e75, type: 3}
-  shot_Point: {fileID: 89514187}
-  bullet_Speed: 20
-  _gunshotClip: {fileID: 8300000, guid: b28be8864c6cd07458465502dc6fefa1, type: 3}
-  _gunshotVolume: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
