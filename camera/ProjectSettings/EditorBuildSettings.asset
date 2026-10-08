@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Renj/Title Scene.unity
+    path: Assets/Main Scenes/Title Scene.unity
     guid: 99db283a5fa65b24a921832f0e6ebede
   - enabled: 1
     path: Assets/Hira/HiraScene.unity
