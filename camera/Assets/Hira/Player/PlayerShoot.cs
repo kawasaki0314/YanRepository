@@ -15,6 +15,12 @@ public class PlayerShoot : MonoBehaviour
     // プレイヤーのカメラ
     // public Camera player_Camera;
 
+    // ★追加:発射音(SE)
+    public AudioClip shot_SE;
+
+    // ★追加:音を鳴らすスピーカー役
+    public AudioSource audio_Source;
+
     void Update()
     {
         // 左クリックされたら
@@ -50,9 +56,11 @@ public class PlayerShoot : MonoBehaviour
         //player_Camera.transform.forward->これはカメラが向いている方向
         //カメラが向いている方向に球を飛ばす
         // rb.linearVelocity = player_Camera.transform.forward * bulletSpeed;
+
+        // ★追加:SEを1回鳴らす
+        // PlayOneShot = 音が重なっても途切れず鳴らせる再生方法
+        audio_Source.PlayOneShot(shot_SE);
     }
 
 
 }
-
-
