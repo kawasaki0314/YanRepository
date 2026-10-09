@@ -9,7 +9,7 @@ public class Enemy_1_Collider : MonoBehaviour
     // 追加: 弾に当たったときに鳴らすSE(InspectorでAudioClipを設定する)
     [SerializeField] private AudioClip _hitSeClip;
     // 追加: SEの音量(0〜1)
-    [SerializeField, Range(0f, 1f)] private float _hitSeVolume = 1.0f;
+    [SerializeField, Range(0f, 100f)] private float _hitSeVolume = 1.0f;
 
     private void OnCollisionEnter(Collision collision)
     {

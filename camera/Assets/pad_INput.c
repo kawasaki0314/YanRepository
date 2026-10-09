@@ -1,0 +1,10 @@
+padInputNames_[PAD_INPUT_A]=L"Ａボタン";			
+padInputNames_[PAD_INPUT_B]=L"Ｂボタン";			
+padInputNames_[PAD_INPUT_C]=L"Ｃボタン";			
+padInputNames_[PAD_INPUT_X]=L"Ｘボタン";			
+padInputNames_[PAD_INPUT_Y]=L"Ｙボタン";			
+padInputNames_[PAD_INPUT_Z]=L"Ｚボタン";			
+padInputNames_[PAD_INPUT_L]=L"Ｌボタン";			
+padInputNames_[PAD_INPUT_R]=L"Ｒボタン";			
+padInputNames_[PAD_INPUT_START]=L"ＳＴＡＲＴボタン";			
+padInputNames_[PAD_INPUT_M]=L"Ｍボタン";			
