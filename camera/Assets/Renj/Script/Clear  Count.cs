@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class ClearCount : MonoBehaviour
 {
     int frameCount = 0;
+    const int time = 60;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,7 +13,7 @@ public class ClearCount : MonoBehaviour
     private void Update()
     {
         frameCount++;
-        if (frameCount >=2200 )
+        if (frameCount >= time*2000)
         {
             SceneManager.LoadScene("End Scene");
         }

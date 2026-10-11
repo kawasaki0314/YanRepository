@@ -6,6 +6,7 @@ public class PlayerShoot : MonoBehaviour
     // 発射する球
     public GameObject bullet_Prefab;
 
+    public GameObject Gun; 
     // 球が出てくる場所
     public Transform shot_Point;
 

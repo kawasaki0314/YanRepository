@@ -11,7 +11,7 @@ public class retry : MonoBehaviour
     public void OnClicked()
     {
 
-        SceneManager.LoadScene("Title Scene");
+        SceneManager.LoadScene("HiraScene");
     }
     // Update is called once per frame
     void Update()
