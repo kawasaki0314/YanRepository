@@ -1776,6 +1776,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9373edff77e9ebc45bed578ad1daf269, type: 3}
+--- !u!1 &478722771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7517754996364038104, guid: 4d8de6316d12ef54698481aa31098f7e, type: 3}
+  m_PrefabInstance: {fileID: 1391132746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &491699185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8894142977359994183, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
@@ -4808,7 +4813,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7142637515923658082, guid: 4d8de6316d12ef54698481aa31098f7e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1457303499}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7517754996364038104, guid: 4d8de6316d12ef54698481aa31098f7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1589069694}
   m_SourcePrefab: {fileID: 100100000, guid: 4d8de6316d12ef54698481aa31098f7e, type: 3}
 --- !u!1 &1391165134 stripped
 GameObject:
@@ -5574,6 +5582,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7142637515923658082, guid: 4d8de6316d12ef54698481aa31098f7e, type: 3}
   m_PrefabInstance: {fileID: 1391132746}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1589069694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478722771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453b4bf7c4200724184248ab5d236036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Recoil
+  recoilPosition: 1
+  recoilRotation: 8
+  returnSpeed: 12
 --- !u!1 &1591622626 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6238946658615066085, guid: e3f7abb3a0cba8d44a51bc5325494343, type: 3}
@@ -13278,6 +13301,10 @@ PrefabInstance:
       propertyPath: shot_SE
       value: 
       objectReference: {fileID: 8300000, guid: b28be8864c6cd07458465502dc6fefa1, type: 3}
+    - target: {fileID: 7766934318572004005, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+      propertyPath: gunRecoil
+      value: 
+      objectReference: {fileID: 1589069694}
     - target: {fileID: 7766934318572004005, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: shot_Point
       value: 

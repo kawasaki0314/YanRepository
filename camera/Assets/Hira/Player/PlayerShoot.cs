@@ -25,6 +25,9 @@ public class PlayerShoot : MonoBehaviour
     // ★銃口から出す火花
     public ParticleSystem muzzleFlash;
 
+    // 銃の反動を制御する
+    public Recoil gunRecoil;
+
     void Update()
     {
         // 左クリックされたら
@@ -52,7 +55,11 @@ public class PlayerShoot : MonoBehaviour
             shot_Point.rotation     //玉が出てくる場所がどちらを向いているか
         );
 
-
+        // ★銃の反動を発生させる
+        if (gunRecoil != null)
+        {
+            gunRecoil.Fire();
+        }
 
         //bullet->今作った玉
         //.GetComponent<Rigidbody>()->玉についてるRigidbodyを探している
