@@ -22,6 +22,9 @@ public class PlayerShoot : MonoBehaviour
     // ★追加:音を鳴らすスピーカー役
     public AudioSource audio_Source;
 
+    // ★銃口から出す火花
+    public ParticleSystem muzzleFlash;
+
     void Update()
     {
         // 左クリックされたら
@@ -33,7 +36,11 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-
+        // ★銃口から火花を出す
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.Play();
+        }
 
         // 玉を作る
         //GameObject = Unityのゲーム世界に存在する「物」
@@ -44,6 +51,8 @@ public class PlayerShoot : MonoBehaviour
             shot_Point.position,    //玉が出てくる場所がどこにあるか
             shot_Point.rotation     //玉が出てくる場所がどちらを向いているか
         );
+
+
 
         //bullet->今作った玉
         //.GetComponent<Rigidbody>()->玉についてるRigidbodyを探している
@@ -62,6 +71,8 @@ public class PlayerShoot : MonoBehaviour
         // PlayOneShot = 音が重なっても途切れず鳴らせる再生方法
         audio_Source.PlayOneShot(shot_SE);
     }
+
+
 
 
 }
