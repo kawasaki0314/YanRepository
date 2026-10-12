@@ -3587,7 +3587,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2660, y: 2560.45}
+  m_SizeDelta: {x: 2561.69, y: 2605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &1702215772
 VideoPlayer:
@@ -3597,7 +3597,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702215770}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: b85fea4855272a648a418bc1f4487888, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: d94dc492974467e4eb01c46246313391, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -4302,8 +4302,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
