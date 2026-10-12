@@ -16,6 +16,6 @@ public class sun : MonoBehaviour
     {
     
         frameRate++;
-        transform.Rotate(Vector3.up, (frameRate *0.001f) * Time.deltaTime);
+        transform.Rotate(Vector3.up, (frameRate *0.0015f) * Time.deltaTime);
     }
 }

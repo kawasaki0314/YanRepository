@@ -23,7 +23,7 @@ public class timer : MonoBehaviour
         int sec = Mathf. FloorToInt(Etimer %60f);
 
 
-        timerD.text = $"{min::00}:{sec:00}";
+        timerD.text = $"{min:00}:{sec:00}";
 
 
 
