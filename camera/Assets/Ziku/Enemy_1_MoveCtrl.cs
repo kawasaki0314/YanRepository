@@ -29,5 +29,10 @@ public class Enemy_1_MoveCtrl : MonoBehaviour
         Vector3 direction = player.position - transform.position;
 
         transform.position += direction.normalized * speed * Time.deltaTime;
+
+        Vector3 targetPosition = player.position;
+        targetPosition.y = transform.position.y;
+
+        transform.LookAt(targetPosition);
     }
 }
