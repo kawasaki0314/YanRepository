@@ -531,8 +531,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPOV
   neck: {fileID: 1668448500}
   sensitivity: 2
-  minVertical: -90
-  maxVertical: 90
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
