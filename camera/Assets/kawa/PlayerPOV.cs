@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerPOV : MonoBehaviour
 {
     // カメラパラメータ
-    private Transform neck; // プレイヤーの首の座標を指定
-    private float sensitivity = 2.0f; // マウス感度
+    [SerializeField] private Transform neck; // プレイヤーの首の座標を指定
+    [SerializeField] private float sensitivity = 2.0f; // マウス感度
     private float minVertical = -90.0f; // 視点の最小角度
     private float maxVertical = 90.0f; // 視点の最大角度
+
+    private const string SensitivityKey = "MouseSensitivity"; // 外っ側からマウス感度いじる用
 
     // 演算用の変数
     private float rotationX = 0.0f; // 縦方向の回転角度
@@ -14,6 +16,9 @@ public class PlayerPOV : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // 保存済みの感度があれば読み込む（なければ初期値のまま）
+        sensitivity = PlayerPrefs.GetFloat(SensitivityKey, sensitivity);
+
         // カーソルを非表示＆ロック
         Cursor.lockState = CursorLockMode.Locked;   // カーソルを画面中央に固定
         Cursor.visible = false;                     // カーソルを非表示にする
@@ -36,6 +41,20 @@ public class PlayerPOV : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, minVertical, maxVertical);
         // 首の回転の設定、縦方向のみ回転させる
         neck.localRotation = Quaternion.Euler(rotationX, 0, 0); 
+    }
+
+    // UIのスライダーから呼ぶ用
+    public void SetSensitivity(float value)
+    {
+        // 感度にプレーヤーが設定した値をぶち込む
+        sensitivity = value;
+        PlayerPrefs.SetFloat(SensitivityKey, value);
+    }
+
+    // スライダーの初期値を合わせる用
+    public float GetSensitivity()
+    {
+        return sensitivity;
     }
 }
 
