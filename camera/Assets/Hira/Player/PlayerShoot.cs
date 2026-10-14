@@ -55,7 +55,7 @@ public class PlayerShoot : MonoBehaviour
             shot_Point.rotation     //玉が出てくる場所がどちらを向いているか
         );
 
-        // ★銃の反動を発生させる
+        //銃の反動を発生させる
         if (gunRecoil != null)
         {
             gunRecoil.Fire();

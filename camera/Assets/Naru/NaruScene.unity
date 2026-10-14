@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb007727f43a8394f95227f923cbd77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_1_Collider
-  _explosionEffectPrefab: {fileID: 100000, guid: 8fcdb821b0f0d9a4bbc8707d6c4c90b3, type: 3}
+  _explosionEffectPrefab: {fileID: 100000, guid: 38a3bbd22462df1498483180a2eb52d3, type: 3}
   _effectLifetime: 0.5
   _hitSeClip: {fileID: 8300000, guid: dd615955c28e2024ca4e01ab4aa01fdb, type: 3}
   _hitSeVolume: 1
