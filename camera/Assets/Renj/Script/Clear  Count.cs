@@ -13,8 +13,9 @@ public class ClearCount : MonoBehaviour
 
     int frameCount = 0;
     const int time = 60;
-    [SerializeField] private TextMeshProUGUI timerCD;
-    [SerializeField] private float timeR = 90f;
+    [SerializeField] private TextMeshProUGUI CountDown;
+    [SerializeField] private TextMeshProUGUI DAY;
+   // [SerializeField] private float timeR = 90f;
     private bool isTimerRun = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,9 +30,9 @@ public class ClearCount : MonoBehaviour
         {
             if (timeRemaining > 0)
             {
-                timeR -= Time.deltaTime;
-                int sec = Mathf.FloorToInt(timeR % 90f);
-                timerCD.text = $"Day 1 Ends in : {sec:00}";
+                timeRemaining -= Time.deltaTime;
+                int sec = Mathf.FloorToInt(timeRemaining % 90f);
+                CountDown.text = $"Day 1 Ends in : {sec:00}";
             }
             else
             {
@@ -62,20 +63,24 @@ public class ClearCount : MonoBehaviour
         {
             if (timeRemaining2 > 0)
             {
-                timeRemaining -= Time.deltaTime;
-                int dsec2 = Mathf.FloorToInt(timeRemaining % 60f);
+                timeRemaining2 -= Time.deltaTime;
+                int dsec2 = Mathf.FloorToInt(timeRemaining2 % 90f);
+
+                CountDown.text = $"Day 2 Ends in : {dsec2:00}";
+                DAY.text = $"DAY 2 / 3";
+
 
             }
             else
             {
 
-                timeR -= Time.deltaTime;
+                //timeR -= Time.deltaTime;
 
 
-                int sec2 = Mathf.FloorToInt(timeR % 90f);
+                //int sec2 = Mathf.FloorToInt(timeR % 90f);
 
 
-                timerCD.text = $"Day 2 Ends in : {sec2:00}";
+                
                 isDay2 = false;
                 isDay3 = true;
 
@@ -85,19 +90,21 @@ public class ClearCount : MonoBehaviour
         {
             if (timeRemaining3 > 0)
             {
-                timeRemaining -= Time.deltaTime;
-                int dsec3 = Mathf.FloorToInt(timeRemaining % 60f);
+                timeRemaining3 -= Time.deltaTime;
+                int dsec3 = Mathf.FloorToInt(timeRemaining3 % 90f);
+                CountDown.text = $"Day 3 Ends in : {dsec3:00}";
+                DAY.text = $"DAY 3 / 3";
 
             }
             else
             {
-                timeR -= Time.deltaTime;
+                //timeR -= Time.deltaTime;
 
 
-                int sec3 = Mathf.FloorToInt(timeR % 90f);
+                //int sec3 = Mathf.FloorToInt(timeR % 90f);
 
 
-                timerCD.text = $"Day 3 Ends in : {sec3:00}";
+               
                 SceneManager.LoadScene("End Scene");
             }
         }
