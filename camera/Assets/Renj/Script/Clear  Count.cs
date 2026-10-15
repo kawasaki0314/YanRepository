@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class ClearCount : MonoBehaviour
 {
+    
+   
     [SerializeField] private float timeRemaining = 90f;
     [SerializeField] private float timeRemaining2 = 90f;
     [SerializeField] private float timeRemaining3 = 90f;
@@ -15,6 +17,8 @@ public class ClearCount : MonoBehaviour
     const int time = 60;
     [SerializeField] private TextMeshProUGUI CountDown;
     [SerializeField] private TextMeshProUGUI DAY;
+
+    [SerializeField] private GameObject sun;
    // [SerializeField] private float timeR = 90f;
     private bool isTimerRun = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,6 +37,8 @@ public class ClearCount : MonoBehaviour
                 timeRemaining -= Time.deltaTime;
                 int sec = Mathf.FloorToInt(timeRemaining % 90f);
                 CountDown.text = $"Day 1 Ends in : {sec:00}";
+
+                //if(sun.transform.)
             }
             else
             {
