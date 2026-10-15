@@ -10491,17 +10491,46 @@ CapsuleCollider:
   m_Height: 1.5628986
   m_Direction: 1
   m_Center: {x: 0, y: 0.00000047683716, z: 0.000009775162}
+--- !u!1 &846023155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1060027045582411216, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+  m_PrefabInstance: {fileID: 8730872256557672552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &846023157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7331668903866271639, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
   m_PrefabInstance: {fileID: 8730872256557672552}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 846023155}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3945b79460b43e745a72d66bea505eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPOV
+--- !u!114 &846023164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846023155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbec10ba77a24bf47b08f13a6da55168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
+  bullet_Prefab: {fileID: 6012875102716479312, guid: 8f61ccd9282c6ff41816bd26562b0ef1, type: 3}
+  Gun: {fileID: 0}
+  shot_Point: {fileID: 1158292868}
+  bullet_Speed: 100
+  shot_SE: {fileID: 8300000, guid: b28be8864c6cd07458465502dc6fefa1, type: 3}
+  _reloadSeClip: {fileID: 8300000, guid: aa180bd15ad64cc4eb87e98cdfbf0a38, type: 3}
+  audio_Source: {fileID: 0}
+  muzzleFlash: {fileID: 1771555479}
+  gunRecoil: {fileID: 1589069694}
+  magazineSize: 30
+  currentAmmo: 0
+  reloadTime: 2
 --- !u!4 &854081705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1260848935525596736, guid: 9e1d93e2b3530a5428002265ebc27878, type: 3}
@@ -19873,7 +19902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8837438085729406198, guid: ace94d6b8f39c0b42b7d5ebce92fc76b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 124
+      value: 162.64
       objectReference: {fileID: 0}
     - target: {fileID: 8837438085729406198, guid: ace94d6b8f39c0b42b7d5ebce92fc76b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35216,6 +35245,10 @@ PrefabInstance:
       propertyPath: magazineSize
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7766934318572004005, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+      propertyPath: bullet_Prefab
+      value: 
+      objectReference: {fileID: 6012875102716479312, guid: 8f61ccd9282c6ff41816bd26562b0ef1, type: 3}
     - target: {fileID: 8529666705284092680, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -35263,6 +35296,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7463964328328327640, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
     - {fileID: 1689517136672210090, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+    - {fileID: 7766934318572004005, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8894142977359994183, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
@@ -35272,6 +35306,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1589069693}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1060027045582411216, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 846023164}
     - targetCorrespondingSourceObject: {fileID: 4589880505652839420, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       insertIndex: -1
       addedObject: {fileID: 694204118}
