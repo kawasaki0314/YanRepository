@@ -16,6 +16,9 @@ public class PlayerShoot : MonoBehaviour
     // プレイヤーのカメラ
     // public Camera player_Camera;
 
+    //★追加:リロードアニメーション
+    public reloadanim reloadAnimScript;
+
     // ★追加:発射音(SE)
     public AudioClip shot_SE;
 
@@ -152,6 +155,12 @@ public class PlayerShoot : MonoBehaviour
             // リロードを開始した時刻を記録する
             // Time.timeは、ゲーム開始から経過した時間（秒）
             reloadStartTime = Time.time;
+
+            // ★追加: リロード回転アニメーションを開始！
+            if (reloadAnimScript != null)
+            {
+                reloadAnimScript.StartReload();
+            }
 
             // ★追加:リロード音を1回鳴らす
             // 弾が満タンのときは上のreturnで抜けるので、実際にリロードが始まる時だけ鳴る

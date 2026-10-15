@@ -49,6 +49,9 @@ public class Recoil : MonoBehaviour
     private Vector3 targetRotation;
 
 
+    
+
+
     // ==============================
     // ゲーム開始時に1回だけ実行する処理
     // ==============================
@@ -112,8 +115,12 @@ public class Recoil : MonoBehaviour
         // 初期回転に反動の回転を加える
         // Quaternion.Euler で角度を回転情報に変換する
         transform.localRotation =
-            initialRotation * Quaternion.Euler(currentRotation);
+            initialRotation * Quaternion.Euler(currentRotation) ; 
+
+        
     }
+
+
 
 
     // ==============================
