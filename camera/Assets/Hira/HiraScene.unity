@@ -10528,7 +10528,7 @@ MonoBehaviour:
   audio_Source: {fileID: 0}
   muzzleFlash: {fileID: 1771555479}
   gunRecoil: {fileID: 1589069694}
-  magazineSize: 30
+  magazineSize: 5
   currentAmmo: 0
   reloadTime: 2
 --- !u!4 &854081705 stripped
