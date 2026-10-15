@@ -19,6 +19,9 @@ public class PlayerShoot : MonoBehaviour
     // ★追加:発射音(SE)
     public AudioClip shot_SE;
 
+    // ★追加:リロード開始時に鳴らす音(InspectorでAudioClipを設定する)
+    [SerializeField] private AudioClip _reloadSeClip;
+
     // ★追加:音を鳴らすスピーカー役
     public AudioSource audio_Source;
 
@@ -49,9 +52,9 @@ public class PlayerShoot : MonoBehaviour
         // マガジンを満タンにする
         currentAmmo = magazineSize;
     }
- 
-        void Update()
-        {
+
+    void Update()
+    {
         // リロード中の処理
         if (isReloading)
         {
@@ -72,10 +75,10 @@ public class PlayerShoot : MonoBehaviour
 
         // 左クリックされたら
         if (Input.GetMouseButtonDown(0))
-            {
-                Shoot();
-            }
-    
+        {
+            Shoot();
+        }
+
 
         void Shoot()
         {
@@ -150,6 +153,13 @@ public class PlayerShoot : MonoBehaviour
             // Time.timeは、ゲーム開始から経過した時間（秒）
             reloadStartTime = Time.time;
 
+            // ★追加:リロード音を1回鳴らす
+            // 弾が満タンのときは上のreturnで抜けるので、実際にリロードが始まる時だけ鳴る
+            // 既存のaudio_Sourceを使い回す(新しいAudioSourceは不要)
+            if (_reloadSeClip != null && audio_Source != null)
+            {
+                audio_Source.PlayOneShot(_reloadSeClip);
+            }
         }
 
         // リロード完了
