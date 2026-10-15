@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
 public class SettingButton : MonoBehaviour
@@ -14,17 +15,28 @@ public class SettingButton : MonoBehaviour
     }
     public void settings()
     {
-        if(settingsPanel != null)
-        {
-            settingsPanel.SetActive(!settingsPanel.activeSelf);
-        }
-       
-    }
+        //if(settingsPanel != null)
+        //{
+        //    settingsPanel.SetActive(!settingsPanel.activeSelf);
+        //}
+        if (settingsPanel == null) { return; }
+        
+            bool isOpening = !settingsPanel.activeSelf;
+        settingsPanel.SetActive(isOpening);
+        Time.timeScale = isOpening ? 0f : 1f;
+        Cursor.visible = isOpening;
+        Cursor.lockState = isOpening ? CursorLockMode.None : CursorLockMode.Locked;
+    
+
+}
    
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            settings();
+        }
     }
 }
