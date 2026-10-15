@@ -35775,6 +35775,10 @@ PrefabInstance:
       propertyPath: bullet_Speed
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 7766934318572004005, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
+      propertyPath: magazineSize
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8529666705284092680, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: m_Enabled
       value: 1
