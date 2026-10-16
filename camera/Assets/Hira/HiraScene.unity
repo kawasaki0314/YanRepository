@@ -10696,13 +10696,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: aa180bd15ad64cc4eb87e98cdfbf0a38, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.802
   m_Pitch: 0.46
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 148
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -16866,7 +16866,7 @@ PrefabInstance:
     - target: {fileID: 712780275938003252, guid: 900443092009bba40adb39cd451c8a1e, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 9d24e6b3ecd1d2b479a31d3d0e7b1f9e, type: 2}
+      objectReference: {fileID: 11400000, guid: 537eb1eef138da7489d2d0c861629654, type: 2}
     - target: {fileID: 712780275938003252, guid: 900443092009bba40adb39cd451c8a1e, type: 3}
       propertyPath: m_fontSizeBase
       value: 80
@@ -16874,7 +16874,7 @@ PrefabInstance:
     - target: {fileID: 712780275938003252, guid: 900443092009bba40adb39cd451c8a1e, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 21148088844906328, guid: 9d24e6b3ecd1d2b479a31d3d0e7b1f9e, type: 2}
+      objectReference: {fileID: -2009162042594335899, guid: 537eb1eef138da7489d2d0c861629654, type: 2}
     - target: {fileID: 712780275938003252, guid: 900443092009bba40adb39cd451c8a1e, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -16957,7 +16957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8380492496001795596, guid: 900443092009bba40adb39cd451c8a1e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 643.6
+      value: 684.85
       objectReference: {fileID: 0}
     - target: {fileID: 8380492496001795596, guid: 900443092009bba40adb39cd451c8a1e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -35481,11 +35481,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6294076720201145961, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: m_Pitch
-      value: 0.6
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6294076720201145961, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: m_Volume
-      value: 0.64
+      value: 0.456
       objectReference: {fileID: 0}
     - target: {fileID: 6457948657182913818, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: m_Enabled
