@@ -19,6 +19,9 @@ public class PlayerShoot : MonoBehaviour
     //★追加:リロードアニメーション
     public reloadanim reloadAnimScript;
 
+    // ★追加: リロードUIなど
+    public bool IsReloadingNow => isReloading;
+
     // ★追加:発射音(SE)
     public AudioClip shot_SE;
 
