@@ -8,8 +8,9 @@ public class Enemy_1_Collider : MonoBehaviour
     [SerializeField] private float _effectLifetime = 2.0f;
     // 追加: 弾に当たったときに鳴らすSE(InspectorでAudioClipを設定する)
     [SerializeField] private AudioClip _hitSeClip;
+    public AudioSource audio_Source;
     // 追加: SEの音量(0〜1)
-    [SerializeField, Range(0f, 100f)] private float _hitSeVolume = 1.0f;
+    [SerializeField, Range(0f, 100f)] private float _hitSeVolume = 5.0f;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,7 +31,7 @@ public class Enemy_1_Collider : MonoBehaviour
             // 追加: 敵が破壊されても音が途切れないよう、その場に一時的な音源を作って再生する
             if (_hitSeClip != null)
             {
-                AudioSource.PlayClipAtPoint(_hitSeClip, transform.position, _hitSeVolume);
+                AudioSource.PlayClipAtPoint(_hitSeClip, transform.position, _hitSeVolume*5);
             }
         }
 

@@ -704,6 +704,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100000, guid: 38a3bbd22462df1498483180a2eb52d3, type: 3}
   _effectLifetime: 0.5
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 246311955481004063}
   _hitSeVolume: 22.3
 --- !u!82 &246311955481004063
 AudioSource:
@@ -727,8 +728,8 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
+  MaxDistance: 25
+  Pan2D: 0.164
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -762,7 +763,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

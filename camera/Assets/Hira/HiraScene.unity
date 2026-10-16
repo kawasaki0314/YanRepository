@@ -1580,6 +1580,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &102887983
 CapsuleCollider:
@@ -1970,9 +1971,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6857941616264190565, guid: 4994a825809524b408a9d86aea8159d1, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8729352795424929874, guid: 4994a825809524b408a9d86aea8159d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.87
+      value: 44.9
       objectReference: {fileID: 0}
     - target: {fileID: 8729352795424929874, guid: 4994a825809524b408a9d86aea8159d1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1980,7 +1985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8729352795424929874, guid: 4994a825809524b408a9d86aea8159d1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -71.13
+      value: -22.52
       objectReference: {fileID: 0}
     - target: {fileID: 8729352795424929874, guid: 4994a825809524b408a9d86aea8159d1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2754,6 +2759,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &191951046
 CapsuleCollider:
@@ -4500,6 +4506,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &331806509
 CapsuleCollider:
@@ -4914,7 +4921,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5026,7 +5033,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.32
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6324,6 +6331,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &449001169
 CapsuleCollider:
@@ -6864,6 +6872,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &456200755
 CapsuleCollider:
@@ -9416,6 +9425,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &701176983
 CapsuleCollider:
@@ -12064,6 +12074,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &943463496
 CapsuleCollider:
@@ -12883,6 +12894,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &979213822
 CapsuleCollider:
@@ -15226,6 +15238,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1133946172
 CapsuleCollider:
@@ -15553,6 +15566,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1139696847
 CapsuleCollider:
@@ -16263,6 +16277,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1158833985
 CapsuleCollider:
@@ -18212,6 +18227,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1336058792
 CapsuleCollider:
@@ -18776,6 +18792,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1391165137
 CapsuleCollider:
@@ -19381,6 +19398,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1446562086
 CapsuleCollider:
@@ -19942,9 +19960,13 @@ PrefabInstance:
       propertyPath: _hitSeVolume
       value: 17.1
       objectReference: {fileID: 0}
+    - target: {fileID: 4833994820055550647, guid: a747db0e7e8c04146ab8f0d35113a72e, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5010371332372911243, guid: a747db0e7e8c04146ab8f0d35113a72e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -33.2
+      value: 31.59
       objectReference: {fileID: 0}
     - target: {fileID: 5010371332372911243, guid: a747db0e7e8c04146ab8f0d35113a72e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19952,7 +19974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5010371332372911243, guid: a747db0e7e8c04146ab8f0d35113a72e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.17
+      value: -13.17
       objectReference: {fileID: 0}
     - target: {fileID: 5010371332372911243, guid: a747db0e7e8c04146ab8f0d35113a72e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19989,6 +20011,10 @@ PrefabInstance:
     - target: {fileID: 7436003631025493643, guid: a747db0e7e8c04146ab8f0d35113a72e, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7436003631025493643, guid: a747db0e7e8c04146ab8f0d35113a72e, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20861,6 +20887,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1510594433
 CapsuleCollider:
@@ -21087,6 +21114,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1519258805
 CapsuleCollider:
@@ -22408,6 +22436,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1619243726
 CapsuleCollider:
@@ -23470,6 +23499,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1707413446
 CapsuleCollider:
@@ -29010,6 +29040,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1777221557
 CapsuleCollider:
@@ -29868,6 +29899,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1819658812
 CapsuleCollider:
@@ -30533,6 +30565,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1824073350
 CapsuleCollider:
@@ -32135,6 +32168,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &1946454277
 CapsuleCollider:
@@ -33602,6 +33636,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &2034771922
 CapsuleCollider:
@@ -34610,6 +34645,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!4 &2131301034 stripped
 Transform:
@@ -35125,6 +35161,7 @@ MonoBehaviour:
   _explosionEffectPrefab: {fileID: 100002, guid: d9ee3bc9832154740a632e73487486f5, type: 3}
   _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
+  audio_Source: {fileID: 0}
   _hitSeVolume: 100
 --- !u!136 &2140729316
 CapsuleCollider:
@@ -35585,7 +35622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8894142977359994183, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8894142977359994183, guid: 715bedbe4a8ff364cb57a47935431281, type: 3}
       propertyPath: m_LocalPosition.z
