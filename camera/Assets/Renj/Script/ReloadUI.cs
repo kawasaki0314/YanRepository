@@ -1,100 +1,94 @@
-//using UnityEngine;
-//using UnityEngine.UI;
-//using TMPro; // TextMeshProを使う場合
-
-//public class ReloadUI : MonoBehaviour
-//{
-//    [Header("参照")]
-//    [Tooltip("PlayerShootスクリプトがアタッチされたオブジェクト")]
-//    public PlayerShoot playerShoot;
-
-//    [Header("UIパーツ")]
-//    [Tooltip("リロード中に表示する親パネルやオブジェクト")]
-//    public GameObject reloadUIRoot;
-
-//    [Tooltip("Filled設定にしたゲージ用Image")]
-//    public Image reloadGauge;
-
-//    [Tooltip("リロードテキスト（省略可）")]
-//    public TextMeshProUGUI reloadText;
-
-//    private float timer = 0f;
-
-//    void Start()
-//    {
-//        // 開始時は非表示にしておく
-//        if (reloadUIRoot != null)
-//        {
-//            reloadUIRoot.SetActive(false);
-//        }
-//    }
-
-//    void Update()
-//    {
-//        if (playerShoot == null) return;
-
-//        // PlayerShoot側のリロード状態を確認
-//        if (playerShoot.IsReloadingNow)
-//        {
-//            // 非表示なら表示する
-//            if (reloadUIRoot != null && !reloadUIRoot.activeSelf)
-//            {
-//                reloadUIRoot.SetActive(true);
-//                timer = 0f;
-//            }
-
-//            // タイマーを進めてゲージを満たす (0.0 ～ 1.0)
-//            timer += Time.deltaTime;
-//            float progress = Mathf.Clamp01(timer / playerShoot.reloadTime);
-
-//            if (reloadGauge != null)
-//            {
-//                reloadGauge.fillAmount = progress;
-//            }
-//        }
-//        else
-//        {
-//            // リロードが終わったらUIを非表示に戻す
-//            if (reloadUIRoot != null && reloadUIRoot.activeSelf)
-//            {
-//                reloadUIRoot.SetActive(false);
-//                timer = 0f;
-//            }
-//        }
-//    }
-//}
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ReloadUI : MonoBehaviour
 {
+    [Header("参照")]
+    [Tooltip("PlayerShootスクリプトを持つオブジェクト")]
     public PlayerShoot playerShoot;
-    public Image reloadGauge;
+
+    [Header("UIパーツ（常時表示）")]
+    [Tooltip("残弾数を表示するTextMeshPro (例: 30 / 30)")]
+    public TextMeshProUGUI ammoText;
+
+    [Header("リロードバー")]
+    [Tooltip("棒状ゲージの親オブジェクト（リロード中だけ表示させたい場合。常時表示なら空でOK）")]
+    public GameObject barRoot;
+
+    [Tooltip("Filled (Horizontal) に設定したImage")]
+    public Image reloadBarFill;
+
+    [Tooltip("「RELOADING...」などのテキスト（省略可）")]
+    public TextMeshProUGUI statusText;
 
     private float timer = 0f;
+
+    void Start()
+    {
+        // バー自体をリロード中だけ出したい場合の設定（不要ならコメントアウト）
+        if (barRoot != null)
+        {
+            barRoot.SetActive(false);
+        }
+    }
 
     void Update()
     {
         if (playerShoot == null) return;
 
-        // リロード中だけゲージを増やす
+        // ==========================================
+        // 1. 残弾数を常時更新
+        // ==========================================
+        if (ammoText != null)
+        {
+            ammoText.text = $"{playerShoot.currentAmmo} / {playerShoot.magazineSize}";
+        }
+
+        // ==========================================
+        // 2. リロード時の棒ゲージ更新
+        // ==========================================
         if (playerShoot.IsReloadingNow)
         {
+            // リロード中：バーを表示
+            if (barRoot != null && !barRoot.activeSelf)
+            {
+                barRoot.SetActive(true);
+            }
+
+            if (statusText != null)
+            {
+                statusText.text = "RELOADING...";
+            }
+
+            // 0.0 ～ 1.0 に向かってゲージを伸ばす
             timer += Time.deltaTime;
             float progress = Mathf.Clamp01(timer / playerShoot.reloadTime);
 
-            if (reloadGauge != null)
+            if (reloadBarFill != null)
             {
-                reloadGauge.fillAmount = progress;
+                reloadBarFill.fillAmount = progress;
             }
         }
         else
         {
-            // リロードしていないときはゲージを0にして待機（UI自体は消さない）
+            // 通常時：ゲージをリセット
             timer = 0f;
-            if (reloadGauge != null)
+
+            if (reloadBarFill != null)
             {
-                reloadGauge.fillAmount = 0f;
+                reloadBarFill.fillAmount = 0f;
+            }
+
+            if (statusText != null)
+            {
+                statusText.text = "";
+            }
+
+            // リロード完了時にバーを隠す場合
+            if (barRoot != null && barRoot.activeSelf)
+            {
+                barRoot.SetActive(false);
             }
         }
     }
