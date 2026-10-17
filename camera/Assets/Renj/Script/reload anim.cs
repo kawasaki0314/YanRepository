@@ -57,7 +57,7 @@ public class reloadanim : MonoBehaviour
             if (rAngle + spin >= 360)
             {
 
-                transform.Rotate(Vector3.right, 360f - rAngle, Space.Self);
+                transform.Rotate(Vector3.left, 360f - rAngle, Space.Self);
                 rAngle = 0f;
 
                 isReloading = false;
@@ -66,7 +66,7 @@ public class reloadanim : MonoBehaviour
             else
             {
 
-                transform.Rotate(Vector3.right, spin, Space.Self);
+                transform.Rotate(Vector3.left, spin, Space.Self);
                 rAngle += spin;
             }
             //if (rAngle >= 360f)
