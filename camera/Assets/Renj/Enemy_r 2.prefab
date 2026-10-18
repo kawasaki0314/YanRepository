@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: f38a6cdc51c28834db88f54a07ebf16c, type: 3}
     - target: {fileID: 246311955481004063, guid: 004ac0e2d090da447a0c70bc24b1c3e2, type: 3}
       propertyPath: MaxDistance
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 246311955481004063, guid: 004ac0e2d090da447a0c70bc24b1c3e2, type: 3}
       propertyPath: rolloffMode
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 246311955481004063, guid: 004ac0e2d090da447a0c70bc24b1c3e2, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.894
+      value: 0.931
       objectReference: {fileID: 0}
     - target: {fileID: 1688344937541339041, guid: 004ac0e2d090da447a0c70bc24b1c3e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -118,7 +118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8876348998654719657, guid: 004ac0e2d090da447a0c70bc24b1c3e2, type: 3}
       propertyPath: speed
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemy_se
   _explosionEffectPrefab: {fileID: 100000, guid: 38a3bbd22462df1498483180a2eb52d3, type: 3}
-  _effectLifetime: 0.8
+  _effectLifetime: 1
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
 --- !u!82 &8251538280040505908
 AudioSource:

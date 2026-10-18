@@ -14355,7 +14355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_1_Generator
   enemyPrefab: {fileID: 6817491763472725708, guid: ace15a20e08c14044a6b0107468b5feb, type: 3}
   spawnDistance: 60
-  spawnInterval: 2
+  spawnInterval: 5
 --- !u!65 &1065606564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18953,7 +18953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1260848935525596736, guid: 9e1d93e2b3530a5428002265ebc27878, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.7057118
+      value: 1.1347214
       objectReference: {fileID: 0}
     - target: {fileID: 1260848935525596736, guid: 9e1d93e2b3530a5428002265ebc27878, type: 3}
       propertyPath: m_LocalScale.z
@@ -18965,11 +18965,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1260848935525596736, guid: 9e1d93e2b3530a5428002265ebc27878, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.95
+      value: -4.9537
       objectReference: {fileID: 0}
     - target: {fileID: 1260848935525596736, guid: 9e1d93e2b3530a5428002265ebc27878, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.5441084
+      value: -7.5441
       objectReference: {fileID: 0}
     - target: {fileID: 1260848935525596736, guid: 9e1d93e2b3530a5428002265ebc27878, type: 3}
       propertyPath: m_LocalRotation.w

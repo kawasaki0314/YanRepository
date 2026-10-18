@@ -72,7 +72,7 @@ public class reloadanim : MonoBehaviour
             //if (rAngle >= 360f)
             //{
             //    rAngle = 0f;
-            //    isReloading = false;
+            //    isReloading = false;  
             //}
 
             //// Recoil側に現在の回転角度（X軸の縦回転）を渡す
