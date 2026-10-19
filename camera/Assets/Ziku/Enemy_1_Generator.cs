@@ -5,7 +5,7 @@ public class Enemy_1_Generator : MonoBehaviour
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private float spawnDistance = 10f;
 
-    [SerializeField] private float spawnInterval = 60f;
+    [SerializeField] public float spawnInterval = 60f;
 
     private float spawnTimer = 0f;
 

@@ -5838,6 +5838,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::sun
   clearCount: {fileID: 0}
+  enemyGenerator: {fileID: 1065606563}
+  enemyMove: {fileID: 1191895527264408269, guid: ace15a20e08c14044a6b0107468b5feb, type: 3}
 --- !u!1 &414491898 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1974562738260571966, guid: e3f7abb3a0cba8d44a51bc5325494343, type: 3}
@@ -23688,7 +23690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::reloadanim
   Gun: {fileID: 1720186763}
-  reloadSpeed: 560
+  reloadSpeed: 520
   shakeR: 0.1
   shakePosM: 0.12
   shakeRotM: 4
@@ -30941,8 +30943,8 @@ RectTransform:
   - {fileID: 53700000}
   - {fileID: 10125792}
   - {fileID: 974507560}
-  - {fileID: 1674006366}
   - {fileID: 553928261}
+  - {fileID: 1674006366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
