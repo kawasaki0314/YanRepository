@@ -6,6 +6,7 @@ public class sun : MonoBehaviour
     public ClearCount clearCount;
     [SerializeField] private Enemy_1_Generator enemyGenerator;
     [SerializeField] private Enemy_1_MoveCtrl enemyMove;
+    [SerializeField] public PlayerShoot magazineSize; 
     private float totalRX = 0f;
 
 
@@ -25,24 +26,40 @@ public class sun : MonoBehaviour
         transform.Rotate(Vector3.right, speed * Time.deltaTime,Space.World);
 
         totalRX += frameR;
+
+        //一日目　夜
     if(totalRX >=180f)
+        {
+            ChangeInterval(2f);
+            speed = 2f;        }
+    //二日目　朝
+    else if(totalRX>=360f)
+        {
+            ChangeInterval(3f);
+            speed = 4;
+       //     magazineSize = 5;
+        }
+
+    //二日目　夜
+    if(totalRX >=540f)
+        {
+            ChangeInterval(1.7f);
+            speed = 1;
+        }
+    //三日目　朝
+    else if(totalRX >=720f)
         {
             ChangeInterval(2f);
             speed = 2f;
         }
-    else if(totalRX>=360f)
+    //三日目　夜
+    if(totalRX >=900f)
         {
-            ChangeInterval(5f);
-            speed = 4;
-        
-        }
+            ChangeInterval(0.8f);
+            speed = 0.5f;
 
-    if(totalRX >=540f)
-        {
-            ChangeInterval(0.1f);
-            speed = 1;
         }
-    
+   
     
     
     }
