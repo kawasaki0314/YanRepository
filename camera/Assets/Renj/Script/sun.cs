@@ -30,27 +30,27 @@ public class sun : MonoBehaviour
         //一日目　夜
     if(totalRX >=180f)
         {
-            ChangeInterval(2f);
-            speed = 2f;        }
+            ChangeInterval(1.7f);
+            speed = 1.2f;        }
     //二日目　朝
     else if(totalRX>=360f)
         {
             ChangeInterval(3f);
-            speed = 4;
+            speed = 2;
        //     magazineSize = 5;
         }
 
     //二日目　夜
     if(totalRX >=540f)
         {
-            ChangeInterval(1.7f);
-            speed = 1;
+            ChangeInterval(1.3f);
+            speed = 0.8f;
         }
     //三日目　朝
     else if(totalRX >=720f)
         {
             ChangeInterval(2f);
-            speed = 2f;
+            speed = 1f;
         }
     //三日目　夜
     if(totalRX >=900f)

@@ -12,6 +12,16 @@ public class ReloadUI : MonoBehaviour
     [Tooltip("残弾数を表示するTextMeshPro (例: 30 / 30)")]
     public TextMeshProUGUI ammoText;
 
+    [Header("最後の1発（爆弾弾）演出")]
+    [Tooltip("通常時のテキスト色")]
+    public Color normalAmmoColor = Color.white;
+
+    [Tooltip("爆弾（残り1発）時のテキスト色（例: 赤やオレンジ）")]
+    public Color bombAmmoColor = Color.red;
+
+    [Tooltip("（任意）爆弾アイコンの画像パーツ（使う場合はセット）")]
+    public GameObject bombIcon;
+
     [Header("リロードバー")]
     [Tooltip("棒状ゲージの親オブジェクト（リロード中だけ表示させたい場合。常時表示なら空でOK）")]
     public GameObject barRoot;
@@ -26,10 +36,15 @@ public class ReloadUI : MonoBehaviour
 
     void Start()
     {
-        // バー自体をリロード中だけ出したい場合の設定（不要ならコメントアウト）
+        // バー自体をリロード中だけ出したい場合の設定
         if (barRoot != null)
         {
             barRoot.SetActive(false);
+        }
+
+        if (bombIcon != null)
+        {
+            bombIcon.SetActive(false);
         }
     }
 
@@ -38,11 +53,31 @@ public class ReloadUI : MonoBehaviour
         if (playerShoot == null) return;
 
         // ==========================================
-        // 1. 残弾数を常時更新
+        // 1. 残弾数を常時更新 & 最後の1発チェック
         // ==========================================
         if (ammoText != null)
         {
-            ammoText.text = $"{playerShoot.currentAmmo} / {playerShoot.magazineSize}";
+            // 残り1発（爆弾）かどうか
+            bool isLastBomb = (playerShoot.currentAmmo == 1);
+
+            if (isLastBomb)
+            {
+                // ★最後の一発：爆弾表記（絵文字の💣や [BOMB] に変更）
+                ammoText.text = $"💣 / {playerShoot.magazineSize}";
+                ammoText.color = bombAmmoColor;
+            }
+            else
+            {
+                // 通常時：通常の数字表示
+                ammoText.text = $"{playerShoot.currentAmmo} / {playerShoot.magazineSize}";
+                ammoText.color = normalAmmoColor;
+            }
+
+            // 爆弾アイコンのGameObjectがある場合はON/OFFを連動
+            if (bombIcon != null)
+            {
+                bombIcon.SetActive(isLastBomb);
+            }
         }
 
         // ==========================================

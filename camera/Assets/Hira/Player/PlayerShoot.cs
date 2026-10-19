@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    //作ったプレハブ
-    // 発射する球
+    // 通常の弾プレハブ
     public GameObject bullet_Prefab;
+
+    // ★追加: 最後の1発用の爆弾プレハブ（Inspectorで割り当てる）
+    public GameObject bomb_Prefab;
 
     public GameObject Gun;
     // 球が出てくる場所
@@ -13,8 +15,8 @@ public class PlayerShoot : MonoBehaviour
     // 球を飛ばすスピード
     public float bullet_Speed = 20f;
 
-    // プレイヤーのカメラ
-    // public Camera player_Camera;
+    // ★追加: 爆弾を撃った時の専用SE（通常のshot_SEと分けたい場合用・空でもOK）
+    public AudioClip bomb_SE;
 
     //★追加:リロードアニメーション
     public reloadanim reloadAnimScript;
@@ -52,7 +54,6 @@ public class PlayerShoot : MonoBehaviour
     // リロード開始時刻
     private float reloadStartTime;
 
-    // ゲーム開始時の処理
     void Start()
     {
         // マガジンを満タンにする
@@ -64,12 +65,10 @@ public class PlayerShoot : MonoBehaviour
         // リロード中の処理
         if (isReloading)
         {
-            // 指定時間が経過したらリロード完了
             if (Time.time >= reloadStartTime + reloadTime)
             {
                 ReloadComplete();
             }
-
             return;
         }
 
@@ -79,111 +78,107 @@ public class PlayerShoot : MonoBehaviour
             StartReload();
         }
 
-        // 左クリックされたら
+        // 左クリックされたら発射
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
         }
+    }
 
-
-        void Shoot()
+    void Shoot()
+    {
+        // 弾が0発なら撃てない
+        if (currentAmmo <= 0)
         {
-            // 弾が0発なら撃てない
-            if (currentAmmo <= 0)
-            {
-                return;
-            }
-
-            // 弾のプレハブと発射位置が設定されているか確認
-            if (bullet_Prefab == null || shot_Point == null)
-            {
-                return;
-            }
-
-            // 残弾数を1発減らす
-            currentAmmo--;
-
-            // ★銃口から火花を出す
-            if (muzzleFlash != null)
-            {
-                muzzleFlash.Play();
-            }
-
-            // 玉を作る
-            //GameObject = Unityのゲーム世界に存在する「物」
-            //Instantiate()は「ゲームの中にオブジェクトを新しく作る」ためのもの
-            //GameObject bullet = Instantiate=「新しくGameObjectを作って、それをbulletという変数に入れる」ということ
-            GameObject bullet = Instantiate(
-                bullet_Prefab,          //発射する玉
-                shot_Point.position,    //玉が出てくる場所がどこにあるか
-                shot_Point.rotation     //玉が出てくる場所がどちらを向いているか
-            );
-
-            //銃の反動を発生させる
-            if (gunRecoil != null)
-            {
-                gunRecoil.Fire();
-            }
-
-            //bullet->今作った玉
-            //.GetComponent<Rigidbody>()->玉についてるRigidbodyを探している
-            //Rigidbody rb->それを【rb】という名前で覚えておく
-            Rigidbody rb = bullet.GetComponent<Rigidbody>();
-
-            // ShotPointの前方向に玉を撃つ
-            //linearVelocity=【物体がどの方向に、どのくらいの速さで動くか】
-            if (rb != null)
-            {
-                rb.linearVelocity = shot_Point.forward * bullet_Speed;
-            }
-
-            // ★追加:SEを1回鳴らす
-            // PlayOneShot = 音が重なっても途切れず鳴らせる再生方法
-            audio_Source.PlayOneShot(shot_SE);
+            return;
         }
 
-        // リロード開始
-        void StartReload()
+        if (shot_Point == null)
         {
-            // 現在の弾数がマガジンの最大弾数以上か確認する
-            if (currentAmmo >= magazineSize)
-            {
-                // リロードせずに、このメソッドの処理を終了する
-                return;
-            }
-
-            // リロード中であることを記録する
-            // trueにすることで、Update()でリロード中の処理が行われる
-            isReloading = true;
-            // リロードを開始した時刻を記録する
-            // Time.timeは、ゲーム開始から経過した時間（秒）
-            reloadStartTime = Time.time;
-
-            // ★追加: リロード回転アニメーションを開始！
-            if (reloadAnimScript != null)
-            {
-                reloadAnimScript.StartReload();
-            }
-
-            // ★追加:リロード音を1回鳴らす
-            // 弾が満タンのときは上のreturnで抜けるので、実際にリロードが始まる時だけ鳴る
-            // 既存のaudio_Sourceを使い回す(新しいAudioSourceは不要)
-            if (_reloadSeClip != null && audio_Source != null)
-            {
-                audio_Source.PlayOneShot(_reloadSeClip);
-            }
+            return;
         }
 
-        // リロード完了
-        void ReloadComplete()
+        // ★最後の1発（currentAmmoが1）かどうかを判定
+        bool isLastBullet = (currentAmmo == 1);
+
+        // ★生成するプレハブを切り替える
+        // 最後の1発かつ爆弾プレハブが設定されていれば爆弾、それ以外は通常弾
+        GameObject prefabToSpawn = (isLastBullet && bomb_Prefab != null) ? bomb_Prefab : bullet_Prefab;
+
+        if (prefabToSpawn == null)
         {
-            // 現在の弾数をマガジンの最大弾数にする
-            // 例：残弾数が5発、最大弾数が30発なら、30発に戻る
-            currentAmmo = magazineSize;
-            // リロード中ではない状態に戻す
-            // falseにすることで、Update()のリロード中の処理を終了し、
-            // 再び射撃できるようにする
-            isReloading = false;
+            return;
         }
+
+        // 残弾数を1発減らす
+        currentAmmo--;
+
+        // 銃口から火花を出す
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.Play();
+        }
+
+        // 弾（または爆弾）を生成する
+        GameObject bullet = Instantiate(
+            prefabToSpawn,
+            shot_Point.position,
+            shot_Point.rotation
+        );
+
+        // 銃の反動
+        if (gunRecoil != null)
+        {
+            gunRecoil.Fire();
+        }
+
+        // 前方に飛ばす
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = shot_Point.forward * bullet_Speed;
+        }
+
+        // ★効果音を鳴らす（爆弾SEが設定されていればそれを優先、なければ通常SE）
+        if (audio_Source != null)
+        {
+            if (isLastBullet && bomb_SE != null)
+            {
+                audio_Source.PlayOneShot(bomb_SE);
+            }
+            else if (shot_SE != null)
+            {
+                audio_Source.PlayOneShot(shot_SE);
+            }
+        }
+    }
+
+    // リロード開始
+    void StartReload()
+    {
+        if (currentAmmo >= magazineSize)
+        {
+            return;
+        }
+
+        isReloading = true;
+        reloadStartTime = Time.time;
+
+        if (reloadAnimScript != null)
+        {
+            reloadAnimScript.StartReload();
+        }
+
+        if (_reloadSeClip != null && audio_Source != null)
+        {
+            audio_Source.PlayOneShot(_reloadSeClip);
+        }
+    }
+
+    // リロード完了
+    void ReloadComplete()
+    {
+        currentAmmo = magazineSize;
+        isReloading = false;
     }
 }

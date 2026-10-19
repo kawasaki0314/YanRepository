@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1688344937541339041, guid: 004ac0e2d090da447a0c70bc24b1c3e2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3835323516710605480, guid: 004ac0e2d090da447a0c70bc24b1c3e2, type: 3}
       propertyPath: m_Name
       value: Enemy_r 2
@@ -152,8 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651c76c385eb4dc499894ccee8711edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::enemy_se
-  _explosionEffectPrefab: {fileID: 100000, guid: 38a3bbd22462df1498483180a2eb52d3, type: 3}
-  _effectLifetime: 0.5
+  _explosionEffectPrefab: {fileID: 100000, guid: 26b78517272ece541951a9e3775ba14f, type: 3}
+  _effectLifetime: 2
   _hitSeClip: {fileID: 8300000, guid: 4231313033e8d9d48b3bd13d52449191, type: 3}
 --- !u!82 &8251538280040505908
 AudioSource:
